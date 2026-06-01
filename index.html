@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living with Diabetes | Weymouth & Portland PCN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #1a56a0;
+    --blue-light: #e8f0fb;
+    --blue-mid: #b8d0f0;
+    --teal: #0f6e56;
+    --teal-light: #e1f5ee;
+    --teal-mid: #9fe1cb;
+    --text: #1c1c1c;
+    --muted: #5a5a5a;
+    --faint: #888;
+    --border: #e0e0e0;
+    --bg: #ffffff;
+    --bg-soft: #f8f8f6;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --max: 700px;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .nav-top {
+    font-size: 13px;
+    color: var(--faint);
+    margin-bottom: 0.5rem;
+  }
+  .collab {
+    font-size: 13px;
+    color: var(--faint);
+    margin-bottom: 3rem;
+  }
+
+  .hero { margin-bottom: 3rem; }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--muted);
+    display: block;
+    font-size: 0.85em;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+  }
+
+  .hero p {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    max-width: 580px;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+  }
+  .hero-links a {
+    font-size: 14px;
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    border-radius: 100px;
+    color: var(--blue);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .hero-links a:hover {
+    background: var(--blue-light);
+    border-color: var(--blue-mid);
+    text-decoration: none;
+  }
+
+  .quote {
+    border-left: 2px solid var(--blue-mid);
+    padding: 0.75rem 1.25rem;
+    margin: 2.5rem 0;
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .steps-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2.5rem 0;
+  }
+  .step-pill {
+    font-size: 13px;
+    border: 1px solid var(--border);
+    padding: 5px 14px;
+    border-radius: 100px;
+    color: var(--muted);
+    background: var(--bg-soft);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  .step-num {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    margin-top: 2.5rem;
+  }
+  .step-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .step-intro {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+    max-width: 560px;
+  }
+
+  .resource-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+    background: var(--bg);
+  }
+  .resource-tag {
+    font-size: 12px;
+    color: var(--faint);
+    margin-bottom: 0.3rem;
+  }
+  .resource-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+  .resource-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  .resource-link {
+    font-size: 13px;
+    color: var(--blue);
+  }
+
+  .programme-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Pre-diabetes callout box — teal to distinguish from main flow */
+  .prediabetes-box {
+    border: 1px solid var(--teal-mid);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--teal-light);
+  }
+  .prediabetes-box h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--teal);
+    margin-bottom: 0.6rem;
+  }
+  .prediabetes-box p {
+    font-size: 14px;
+    color: #1c4a3a;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .prediabetes-box ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    font-size: 14px;
+    color: #1c4a3a;
+    line-height: 1.9;
+    margin-bottom: 0.75rem;
+  }
+  .prediabetes-box .prog-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--teal);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+  }
+  .prediabetes-box .resource-link {
+    color: var(--teal);
+  }
+
+  /* Young people callout */
+  .callout-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.4rem;
+    margin: 1.5rem 0;
+    background: var(--bg-soft);
+  }
+  .callout-box h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .callout-box p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .tip-block { margin-bottom: 0.5rem; }
+  .tip-block h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+  .tip-block ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .section-heading {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .section-intro {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    max-width: 560px;
+  }
+
+  .warning-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.4rem;
+    margin: 2rem 0;
+    background: var(--bg-soft);
+  }
+  .warning-box h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .warning-box ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 2.1;
+  }
+  .warning-box .emergency {
+    font-size: 13px;
+    color: var(--faint);
+    margin-top: 1rem;
+  }
+
+  .footer-block {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  .footer-block strong {
+    font-weight: 500;
+    color: var(--text);
+  }
+  .footer-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--blue);
+  }
+  .pilot-note {
+    font-size: 12px;
+    color: var(--faint);
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 500px) {
+    .hero-headline { font-size: 32px; }
+    .step-title { font-size: 24px; }
+    .section-heading { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="nav-top">← <a href="https://weymouthandportlandpcn.co.uk">PCN home</a></div>
+  <div class="collab">Weymouth &amp; Portland · Dorset Diabetes Team</div>
+
+  <div class="hero">
+    <h1 class="hero-headline">
+      Living with diabetes
+      <em>Know more.<br>Do more.<br>Live well.</em>
+    </h1>
+    <p>A diabetes diagnosis changes things. It can feel overwhelming at first — a lot of new information, new routines, new things to monitor and manage.</p>
+    <p>This page won't pretend that's easy. But it will tell you this: understanding your diabetes is one of the most powerful things you can do. The more you know, the more control you have.</p>
+    <p>Whether you were diagnosed recently or have been living with diabetes for years, there is always more available to you.</p>
+    <div class="hero-links">
+      <a href="#understand">Start here</a>
+      <a href="#prediabetes">Blood sugar a bit high?</a>
+      <a href="#local">Find local support</a>
+      <a href="https://weymouthandportlandpcn.co.uk">Back to Weymouth &amp; Portland PCN</a>
+    </div>
+  </div>
+
+  <div class="quote">"Type 2 diabetes is serious — but it is also one of the most manageable long-term conditions there is. What you do every day matters more than any medication."</div>
+
+  <div class="steps-nav">
+    <div class="step-pill">01 Understand your diabetes</div>
+    <div class="step-pill">02 Manage it day to day</div>
+    <div class="step-pill">03 Live well alongside it</div>
+  </div>
+
+  <hr id="understand">
+
+  <div class="step-num">Step one</div>
+  <h2 class="step-title">Understand your diabetes</h2>
+  <p class="step-intro">The more you understand about how diabetes works, the better equipped you are to manage it. These resources explain the condition in plain language.</p>
+
+  <div class="resource-card">
+    <div class="resource-tag">Self-assessment · 2 min</div>
+    <div class="resource-title">Know Your Risk</div>
+    <div class="resource-desc">If you have not been diagnosed but are concerned about your risk, this tool from Diabetes UK gives you a clear picture. If your risk is moderate to high, your GP can arrange a blood test.</div>
+    <div class="resource-link"><a href="https://riskscore.diabetes.org.uk">riskscore.diabetes.org.uk</a> · Free</div>
+  </div>
+
+  <!-- FIX 1: Was a single NHS Dorset card pointing to the wrong URL.
+       Now two cards: NHS national (condition info) and NHS Dorset (local pathways). -->
+  <div class="resource-card">
+    <div class="resource-tag">Website · NHS</div>
+    <div class="resource-title">Understanding diabetes</div>
+    <div class="resource-desc">The NHS guide to diabetes — covering types of diabetes, symptoms, diagnosis, treatment, and living well with the condition.</div>
+    <div class="resource-link"><a href="https://www.nhs.uk/conditions/diabetes/">nhs.uk/conditions/diabetes</a> · Free</div>
+  </div>
+
+  <div class="resource-card">
+    <div class="resource-tag">Website · NHS Dorset</div>
+    <div class="resource-title">Diabetes services in Dorset</div>
+    <div class="resource-desc">Local information covering diabetes services, the Path to Remission programme, driving on insulin, weight management, and pre-diabetes support in Dorset.</div>
+    <div class="resource-link"><a href="https://www.nhsdorset.nhs.uk/diabetes/">nhsdorset.nhs.uk/diabetes</a> · Free</div>
+  </div>
+
+  <div class="resource-card">
+    <div class="resource-tag">Website · Diabetes UK</div>
+    <div class="resource-title">Diabetes UK</div>
+    <div class="resource-desc">Comprehensive, trustworthy information about all types of diabetes — symptoms, diagnosis, living well, and the latest research.</div>
+    <div class="resource-link"><a href="https://www.diabetes.org.uk">diabetes.org.uk</a> · Free</div>
+  </div>
+
+  <!-- Pre-diabetes section — added following Deep Dive data showing 6,245 people locally
+       with pre-diabetes and significant under-referral to NDPP.
+       FIX 2: Healthier You link replaced with Diabetes UK prevention page.
+       The national Healthier You programme no longer covers diabetes prevention
+       and Dorset is not listed as a participating area. -->
+  <div class="prediabetes-box" id="prediabetes">
+    <h3>Has your GP told you your blood sugar is a bit high?</h3>
+    <p>This is called pre-diabetes or non-diabetic hyperglycaemia. It means your blood sugar is above normal, but not yet in the diabetic range. It is not a diagnosis of diabetes — and it does not have to become one.</p>
+    <p>More than 6,000 people across Weymouth and Portland are in this position right now. Many don't know what to do with the information. This is what you can do:</p>
+    <ul>
+      <li>Small changes to food and movement make a real difference at this stage</li>
+      <li>Losing 5 to 10% of body weight if you are overweight significantly reduces risk</li>
+      <li>You may be eligible for a free NHS programme specifically designed to help</li>
+      <li>Ask your GP or practice nurse whether you qualify for a referral</li>
+    </ul>
+    <!-- FIX 3: Updated Diabetes UK prevention link and description -->
+    <div class="prog-badge">Free · Diabetes UK</div>
+    <div class="resource-title" style="margin-top:0.25rem">Type 2 diabetes prevention</div>
+    <p style="margin-top:0.4rem">Practical information, tools and resources to help you understand pre-diabetes and reduce your risk of developing Type 2 diabetes. Includes healthy eating tips, a risk checker, and guidance on NHS prevention courses.</p>
+    <div class="resource-link"><a href="https://www.diabetes.org.uk/about-diabetes/type-2-diabetes/prevention" style="color:var(--teal)">diabetes.org.uk/about-diabetes/type-2-diabetes/prevention</a> · Free</div>
+  </div>
+
+  <hr id="manage">
+
+  <div class="step-num">Step two</div>
+  <h2 class="step-title">Manage it day to day</h2>
+  <p class="step-intro">Diabetes management is not about perfection. It is about building habits that work for your life, with the right support around you.</p>
+
+  <div class="tip-grid">
+    <div class="tip-block">
+      <h4>Blood sugar</h4>
+      <ul>
+        <li>Know your target range</li>
+        <li>Understand what raises and lowers it</li>
+        <li>Keep a record to spot patterns</li>
+        <li>Talk to your practice nurse about monitoring</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h4>Food</h4>
+      <ul>
+        <li>No single diet works for everyone</li>
+        <li>Reducing refined carbohydrates helps most people</li>
+        <li>Small, sustainable changes beat big overhauls</li>
+        <li>Specialist dietitian support is available locally</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h4>Movement</h4>
+      <ul>
+        <li>Physical activity directly lowers blood sugar</li>
+        <li>Even a short walk after eating helps</li>
+        <li>Aim for something you will actually do</li>
+        <li>LiveWell Dorset can support you</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h4>Medication</h4>
+      <ul>
+        <li>Take it as prescribed, even on good days</li>
+        <li>Tell your team about any side effects</li>
+        <li>Medication and lifestyle work together</li>
+        <li>Your practice nurse is your first point of contact</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Young people callout — added following Deep Dive data flagging 18-40 group
+       as at risk of slipping through and carrying higher complication risk -->
+  <div class="callout-box">
+    <h3>Under 40 and living with diabetes?</h3>
+    <p>The number of younger adults being diagnosed with Type 2 diabetes is rising. Developing it under 40 carries a higher risk of complications compared to later-life diagnosis — but it also means you have more time, and more opportunity, to make changes that matter. Your practice nurse can make sure you are getting the right support for your age and circumstances. You do not have to manage this alone.</p>
+  </div>
+
+  <div class="resource-card">
+    <div class="programme-badge">Free programme</div>
+    <div class="resource-title">New to Type 2</div>
+    <div class="resource-desc">A great introduction for anyone recently diagnosed. Friendly and informal, run by the Weymouth and Portland diabetes specialist dietitian and nurse. In person across two three-hour sessions, or online across three two-hour sessions including evenings. Join in as much or as little as you like.</div>
+    <div class="resource-link">In person and online · <a href="tel:01305234090">01305 234090</a> or <a href="mailto:w&amp;p.pcn@dorsetgp.nhs.uk">w&amp;p.pcn@dorsetgp.nhs.uk</a></div>
+  </div>
+
+  <div class="resource-card">
+    <div class="programme-badge">Free programme</div>
+    <div class="resource-title">Refocus</div>
+    <div class="resource-desc">For people who have been living with Type 2 for a while. No preparation needed, no personal information required unless you choose to share. Updates on information and equipment, questions to the diabetes team, and the chance to meet others.</div>
+    <div class="resource-link">Venues across Weymouth and Portland · <a href="tel:01305234090">01305 234090</a></div>
+  </div>
+
+  <hr id="live-well">
+
+  <div class="step-num">Step three</div>
+  <h2 class="step-title">Live well alongside it</h2>
+  <p class="step-intro">Diabetes is a long-term condition. Living well with it is about the whole picture — not just blood sugar, but energy, mood, sleep, and connection.</p>
+
+  <div class="tip-block" style="margin-bottom:1.25rem">
+    <h4>Sleep</h4>
+    <ul>
+      <li>Poor sleep raises blood sugar — they are directly connected</li>
+      <li>Keep a consistent bedtime and wind-down routine</li>
+      <li>If sleep is a persistent problem, mention it to your practice nurse</li>
+    </ul>
+  </div>
+
+  <div class="tip-block" style="margin-bottom:1.25rem">
+    <h4>Emotional wellbeing</h4>
+    <ul>
+      <li>Diabetes distress is real and very common</li>
+      <li>Feeling overwhelmed, frustrated or burnt out is a recognised part of living with a long-term condition</li>
+      <li>Steps 2 Wellbeing offers free NHS talking therapies — no GP referral needed</li>
+    </ul>
+  </div>
+
+  <div class="tip-block" style="margin-bottom:1.75rem">
+    <h4>Remission</h4>
+    <ul>
+      <li>Type 2 diabetes remission is possible for some people</li>
+      <li>It means blood sugar levels return to a normal range without medication</li>
+      <li>The Path to Remission programme is available via NHS Dorset — ask your GP</li>
+    </ul>
+  </div>
+
+  <hr id="local">
+
+  <h2 class="section-heading">In Weymouth &amp; Portland</h2>
+  <p class="section-intro">Your practice nurse or GP is your first stop for diabetes queries. You also have access to local specialist support across all five practices.</p>
+
+  <div class="resource-card">
+    <div class="resource-title">Diabetes Specialist Dietitian</div>
+    <div class="resource-desc">Specialist nutrition support for people with diabetes. Clinics run at most Weymouth and Portland GP surgeries. Ask your practice nurse or GP for a referral.</div>
+    <div class="resource-link">Via your GP practice · Free</div>
+  </div>
+
+  <div class="resource-card">
+    <div class="resource-title">Diabetes Specialist Nurse</div>
+    <div class="resource-desc">Specialist nursing advice available via your practice nurse.</div>
+    <div class="resource-link">Via your practice nurse · Free</div>
+  </div>
+
+  <div class="resource-card">
+    <div class="resource-title">LiveWell Dorset</div>
+    <div class="resource-desc">Free support and coaching around movement, food, sleep and general wellbeing. Self-refer and choose what suits you.</div>
+    <div class="resource-link"><a href="https://www.livewelldorset.co.uk">livewelldorset.co.uk</a> · Free · Self-refer</div>
+  </div>
+
+  <div class="resource-card">
+    <div class="resource-title">Steps 2 Wellbeing</div>
+    <div class="resource-desc">Free NHS talking therapies for people in Dorset, including support where diabetes is affecting your mood and daily life. You can refer yourself directly.</div>
+    <div class="resource-link"><a href="https://www.steps2wellbeing.co.uk">steps2wellbeing.co.uk</a> · Free · Self-refer</div>
+  </div>
+
+  <div class="resource-card">
+    <div class="resource-title">Dorset County Hospital — Diabetes Centre</div>
+    <div class="resource-desc">If you have Type 1 diabetes, or any type of diabetes and are pregnant, your care comes from the team at Dorset County Hospital. Some services are delivered locally in Weymouth and Portland. If getting to appointments is difficult, ask about phone or video options.</div>
+    <div class="resource-link"><a href="https://www.dchft.nhs.uk">dchft.nhs.uk</a></div>
+  </div>
+
+  <div class="warning-box">
+    <h3>When to contact your GP or seek urgent help</h3>
+    <ul>
+      <li>Blood sugar that will not come down despite your usual measures</li>
+      <li>Signs of a hypoglycaemic episode — shaking, sweating, confusion</li>
+      <li>New or worsening foot problems — do not wait</li>
+      <li>Changes in vision</li>
+      <li>Unexplained weight loss or fatigue</li>
+      <li>Diabetes that is stopping you coping day to day</li>
+      <li>If you are struggling emotionally, call NHS 111</li>
+    </ul>
+    <p class="emergency">Call 999 or go to A&amp;E if someone is in immediate danger or you are very worried that waiting is not safe.</p>
+  </div>
+
+  <div class="footer-block">
+    <p><strong>Living with diabetes</strong></p>
+    <p>A resource for people in Weymouth &amp; Portland living with diabetes.</p>
+    <p>Developed by Weymouth &amp; Portland Primary Care Network in partnership with the Weymouth and Portland Diabetes Team.</p>
+    <p class="pilot-note">This page is a pilot. It can be adapted for use across Dorset.</p>
+    <div class="footer-links">
+      <a href="https://weymouthandportlandpcn.co.uk">Back to Weymouth &amp; Portland PCN</a>
+      <a href="https://www.nhs.uk/conditions/diabetes/">NHS diabetes information</a>
+      <a href="https://www.nhsdorset.nhs.uk/diabetes/">NHS Dorset diabetes</a>
+      <a href="https://www.diabetes.org.uk">Diabetes UK</a>
+      <a href="#">New to Type 2</a>
+      <a href="#">Refocus</a>
+      <a href="https://www.steps2wellbeing.co.uk">Steps 2 Wellbeing</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
