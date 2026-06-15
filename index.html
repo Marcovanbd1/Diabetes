@@ -460,6 +460,32 @@
   }
   .footer-links a:hover { color: var(--blue-mid); }
 
+  /* REVIEW MODE */
+  .review-banner {
+    background: #b91c1c; color: white;
+    padding: 0.75rem 2rem; font-size: 13px; font-weight: 500;
+    text-align: center; letter-spacing: 0.02em;
+  }
+  .changed-block {
+    border-left: 4px solid #dc2626 !important;
+    background: #fff5f5 !important;
+    position: relative;
+  }
+  .change-label {
+    display: inline-block;
+    font-size: 10px; font-weight: 600;
+    background: #dc2626; color: white;
+    padding: 2px 8px; border-radius: 100px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.6rem; display: block;
+  }
+  .change-note {
+    font-size: 11px; color: #b91c1c;
+    font-style: italic; margin-top: 0.6rem;
+    line-height: 1.5; border-top: 1px dashed #fca5a5;
+    padding-top: 0.5rem;
+  }
+
   @media (max-width: 700px) {
     nav { padding: 0 1.25rem; }
     .nav-links { display: none; }
@@ -479,6 +505,8 @@
 </style>
 </head>
 <body>
+
+<div class="review-banner">Review version &mdash; changes highlighted in red for Rachael Stow and Isi Hooley &middot; June 2026</div>
 
 <nav>
   <a href="#" class="nav-brand">Living with diabetes</a>
@@ -506,7 +534,9 @@
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">Weymouth &amp; Portland &middot; Diabetes Team</p>
+    <span class="change-label">Updated headline</span>
     <h1>Diabetes is quiet.<br><em>Until it isn't.<br>Here's what helps.</em></h1>
+    <p class="change-note">Previous: "Living with diabetes / Know more. Do more. Live well." New headline addresses the "I feel fine" cohort directly. Working title &mdash; please let us know if this lands well for patients you see.</p>
     <div class="hero-lead">
       <p>One of the most common things people say after a diabetes diagnosis is: I feel fine. And that is often true. Diabetes does not always make you feel unwell &mdash; especially at first.</p>
       <p>But it is working quietly in the background. And what you do now, before you feel any different, is when it matters most.</p>
@@ -571,7 +601,7 @@
         </div>
         <div class="video-body">
           <h3>Carbohydrates and diabetes</h3>
-          <p>Managing diabetes is not just about avoiding sugar. This video explains how carbohydrates affect blood sugar and what that means in practice.</p>
+          <p>Managing diabetes is not just about avoiding sugar. This video explains how carbohydrates affect blood glucose and what that means in practice.</p>
           <p class="video-duration">YouTube &middot; Free</p>
         </div>
       </a>
@@ -582,7 +612,7 @@
         </div>
         <div class="video-body">
           <h3>Food and blood sugar</h3>
-          <p>Practical information on how different foods affect blood sugar levels, and how to think about food choices without it becoming overwhelming.</p>
+          <p>Practical information on how different foods affect blood glucose levels, and how to think about food choices without it becoming overwhelming.</p>
           <p class="video-duration">YouTube &middot; Free</p>
         </div>
       </a>
@@ -614,12 +644,14 @@
 <!-- HBA1C EXPLAINER -->
 <section class="hba1c-section" id="hba1c">
   <div class="section-inner">
+    <span class="change-label">Updated &mdash; Isi feedback: blood glucose throughout</span>
     <p class="section-label">Understanding your numbers</p>
     <h2 class="section-title">What is your HbA1c?</h2>
     <div class="hba1c-inner">
-      <p>&ldquo;Your HbA1c is a measure of your average blood sugar over the past two to three months. It is one of the most useful tools you have for understanding how your diabetes is doing &mdash; but many people are never quite sure what it means.&rdquo;</p>
+      <p>&ldquo;Your HbA1c is a measure of your average blood glucose over the past two to three months. It is one of the most useful tools you have for understanding how your diabetes is doing &mdash; but many people are never quite sure what it means.&rdquo;</p>
     </div>
-    <p class="hba1c-honest">Unlike a blood sugar reading taken at a single moment, the HbA1c gives a longer picture. It is the number your care team uses to understand whether your diabetes is well supported, and to make decisions about your care. Knowing your own number, and what it means for you, puts you more in the picture.</p>
+    <p class="change-note">Terminology: "blood sugar" replaced with "blood glucose" throughout the page (Isi's preference, to avoid patients conflating blood glucose with table sugar). Exception: Diabetes UK use "blood sugar" so we retain it where quoting their resources.</p>
+    <p class="hba1c-honest">Unlike a blood glucose reading taken at a single moment, the HbA1c gives a longer picture. It is the number your care team uses to understand whether your diabetes is well supported, and to make decisions about your care. Knowing your own number, and what it means for you, puts you more in the picture.</p>
     <div class="resource-grid">
       <a href="https://www.diabetes.org.uk/guide-to-diabetes/managing-your-diabetes/hba1c" target="_blank" rel="noopener" class="resource-card">
         <span class="resource-tag">Diabetes UK</span>
@@ -634,9 +666,12 @@
 <!-- PRE-DIABETES -->
 <section id="prediabetes" style="background: var(--bg); padding-top: 0; padding-bottom: 1rem;">
   <div class="section-inner">
-    <div class="prediabetes-box">
-      <h3>Has your GP told you your blood sugar is a bit high?</h3>
-      <p>This is called pre-diabetes or non-diabetic hyperglycaemia. It means your blood sugar is above normal, but not yet in the diabetic range. It is not a diagnosis of diabetes &mdash; and it does not have to become one.</p>
+    <div class="prediabetes-box changed-block">
+      <span class="change-label">Updated &mdash; Isi feedback</span>
+      <h3>Has your GP told you your blood glucose is a bit high?</h3>
+      <p>This section is for people who have not yet been diagnosed with diabetes. If you are already living with diabetes and your GP has said the same thing, the information about small changes and support further down this page applies to you too.</p>
+      <p class="change-note">Added clarifying line: a GP might say "your blood glucose is a bit high" to someone already diagnosed too, so we now make clear who this box is for.</p>
+      <p>Pre-diabetes, or non-diabetic hyperglycaemia, means your blood glucose is above normal but not yet in the diabetic range. It is not a diagnosis of diabetes &mdash; and it does not have to become one.</p>
       <p>More than 6,000 people across Weymouth and Portland are in this position. Small changes at this stage make a real difference. Ask your GP or practice nurse whether you are eligible for a free NHS prevention programme.</p>
       <ul>
         <li>Reducing refined carbohydrates and increasing movement helps most people</li>
@@ -659,20 +694,22 @@
     <p class="section-intro">Living with diabetes involves a lot of small decisions every day. The goal is not perfection. It is finding an approach that works for your life and that you can sustain long term.</p>
 
     <div class="selfmgmt-grid">
-      <div class="selfmgmt-card">
-        <span class="selfmgmt-tag">Blood sugar</span>
+      <div class="selfmgmt-card changed-block">
+        <span class="change-label">Updated &mdash; Isi feedback</span>
+        <span class="selfmgmt-tag">Blood glucose</span>
         <h3>Know your numbers</h3>
-        <p>Understanding what raises and lowers your blood sugar is one of the most powerful things you can do. Patterns matter more than individual readings.</p>
+        <p>Most people with Type 2 diabetes are not prescribed blood glucose monitoring equipment. Your HbA1c, measured at your regular review, is the main number to follow. It gives a picture of how your blood glucose has been over the past two to three months &mdash; more useful than any single reading.</p>
         <div class="selfmgmt-tips">
-          <span class="tip">Ask your practice nurse about your target range</span>
-          <span class="tip">Keep a note of readings to spot patterns</span>
-          <span class="tip">Ask about your HbA1c at every review</span>
+          <p class="change-note">Reframed: most T2 patients are not prescribed monitoring equipment. Section now centres on HbA1c as the main number to follow, rather than assuming home testing.</p>
+        <span class="tip">Ask for your HbA1c result at every review &mdash; it is yours to know</span>
+          <span class="tip">Ask what it means and whether the trend is heading in the right direction</span>
+          <span class="tip">If you do monitor at home, patterns over time matter more than individual readings</span>
         </div>
       </div>
       <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Food</span>
         <h3>Food that works for you</h3>
-        <p>There is no single diet that works for everyone with diabetes. Managing diabetes is not about avoiding sugar entirely &mdash; it is about understanding how different foods affect your blood sugar, and finding an approach you can sustain.</p>
+        <p>There is no single diet that works for everyone with diabetes. Managing diabetes is not about avoiding sugar entirely &mdash; it is about understanding how different foods affect your blood glucose, and finding an approach you can sustain.</p>
         <div class="selfmgmt-tips">
           <span class="tip">Reducing refined carbohydrates helps most people</span>
           <span class="tip">Small, sustainable changes beat big overhauls</span>
@@ -682,9 +719,9 @@
       <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Movement</span>
         <h3>Movement and blood sugar</h3>
-        <p>Physical activity directly lowers blood sugar. It does not have to be intense &mdash; even a short walk after eating makes a difference. The best movement is the kind you will actually do.</p>
+        <p>Physical activity can help to lower blood glucose. It does not have to be intense &mdash; even a short walk after eating makes a difference. The best movement is the kind you will actually do.</p>
         <div class="selfmgmt-tips">
-          <span class="tip">A 10-minute walk after meals helps blood sugar</span>
+          <span class="tip">A 10-minute walk after meals helps lower blood glucose</span>
           <span class="tip">Aim for something you enjoy and can keep up</span>
           <span class="tip">LiveWell Dorset can help you find what suits you</span>
         </div>
@@ -741,20 +778,17 @@
           <span class="tip">No GP referral needed for Steps 2 Wellbeing</span>
         </div>
       </div>
-      <div class="selfmgmt-card">
-        <span class="selfmgmt-tag">Sleep</span>
-        <h3>Sleep and blood sugar</h3>
-        <p>Poor sleep raises blood sugar &mdash; they are directly connected. Better sleep makes everything else more manageable. Small, consistent habits make a real difference over time.</p>
-        <div class="selfmgmt-tips">
-          <span class="tip">Keep a consistent bedtime, even at weekends</span>
-          <span class="tip">Wind down without screens for 30 minutes</span>
-          <span class="tip">If sleep is a persistent problem, mention it at your next review</span>
-        </div>
+      <div class="selfmgmt-card changed-block">
+        <span class="change-label">Updated &mdash; Isi feedback</span>
+        <span class="selfmgmt-tag">Self care</span>
+        <h3>Sleep and taking care of yourself</h3>
+        <p class="change-note">Reframed from advice checklist to acknowledgement. Isi's point: for people with hectic lives or caring responsibilities, a list of sleep habits becomes another thing to feel bad about. Rachael &mdash; does this framing work clinically?</p>
+        <p>Poor sleep raises blood glucose, and life does not always make good sleep easy. Caring responsibilities, work, stress &mdash; these are real. The point is not to add another thing to feel bad about. It is to notice that how you are looking after yourself overall is part of how your diabetes behaves. If sleep is a persistent problem, it is worth mentioning at your next review &mdash; not as a failure, but as useful information.</p>
       </div>
       <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Remission</span>
         <h3>Remission is possible for some</h3>
-        <p>For some people with Type 2 diabetes, remission &mdash; where blood sugar returns to a normal range without medication &mdash; is achievable. It is not the right goal for everyone, but it is worth knowing it exists.</p>
+        <p>For some people with Type 2 diabetes, remission &mdash; where blood glucose returns to a normal range without medication &mdash; is achievable. It is not the right goal for everyone, but it is worth knowing it exists.</p>
         <div class="selfmgmt-tips">
           <span class="tip">Ask your GP about the Path to Remission programme</span>
           <span class="tip">Available via NHS Dorset</span>
@@ -777,7 +811,8 @@
   <div class="section-inner">
     <p class="section-label">In Weymouth &amp; Portland</p>
     <h2 class="section-title">You are not on your own</h2>
-    <p class="section-intro">Your practice nurse or GP is your first stop for diabetes queries. You also have access to local specialist support across all five practices.</p>
+    <p class="change-note" style="margin-bottom:0.75rem;">"All five practices" replaced with "GP surgeries" &mdash; Isi flagged the former as jargon patients wouldn't use.</p>
+    <p class="section-intro">Your practice nurse or GP is your first stop for diabetes queries. You also have access to local specialist support across all the GP surgeries in Weymouth and Portland.</p>
 
     <div class="local-grid">
       <div class="local-card">
@@ -808,16 +843,22 @@
     </div>
 
     <div class="redflags">
+      <span class="change-label">Updated &mdash; Isi feedback</span>
+      <p class="change-note" style="margin-bottom:0.75rem;">Three changes: hypo entry removed from main list and given its own box below with caveat that most T2 patients are not at risk (only those on gliclazide or insulin). TREND PDF linked. "Your HbA1c rising repeatedly" added as a reason to contact GP &mdash; threshold wording to be confirmed with Rachael.</p>
       <p class="redflag-title"><span class="redflag-dot"></span>When to contact your GP or seek urgent help</p>
       <ul class="redflag-list">
-        <li>Blood sugar that will not come down despite your usual approach</li>
-        <li>Signs of a hypo &mdash; shaking, sweating, confusion</li>
+        <li>Blood glucose that will not come down despite your usual approach</li>
         <li>New or worsening foot problems &mdash; do not wait</li>
         <li>Changes in your vision</li>
         <li>Unexplained weight loss or fatigue</li>
+        <li>Your HbA1c rising repeatedly over several reviews</li>
         <li>Diabetes that is stopping you coping day to day</li>
         <li>If you are struggling emotionally, call NHS 111</li>
       </ul>
+      <div style="margin-top: 1.25rem; padding: 1rem 1.25rem; background: var(--bg-soft); border-radius: 10px; border: 1px solid var(--border);">
+        <p style="font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.4rem;">About hypoglycaemia (hypos)</p>
+        <p style="font-size: 0.84rem; color: var(--stone); line-height: 1.65;">Most people with Type 2 diabetes are not at risk of hypos. Hypos are mainly a risk if you take gliclazide or insulin. If you are on either of these, it is worth knowing the signs: shaking, sweating, confusion, or feeling suddenly unwell. <a href="https://trend-uk.org/wp-content/uploads/2020/03/A5_Hypo_TREND.pdf" target="_blank" rel="noopener">The TREND hypo guide</a> explains what to do. Contact your GP if hypos are frequent or severe.</p>
+      </div>
       <p class="redflag-note">Call <strong>999</strong> or go to A&amp;E if someone is in immediate danger or you are very worried that waiting is not safe.</p>
     </div>
   </div>
