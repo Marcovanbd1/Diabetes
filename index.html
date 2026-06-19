@@ -48,6 +48,18 @@
   a { color: var(--blue); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
+  /* FEEDBACK BANNER */
+  .feedback-banner {
+    background: var(--teal);
+    color: white;
+    padding: 0.75rem 2rem;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .feedback-banner strong { font-weight: 500; }
+
   /* NAV */
   nav {
     position: sticky; top: 0; z-index: 200;
@@ -277,6 +289,31 @@
     font-weight: 300; font-style: italic;
   }
 
+  /* HBA1C TARGETS */
+  .hba1c-targets {
+    background: var(--bg); border: 1px solid var(--blue-mid);
+    border-radius: var(--radius-lg); padding: 1.75rem 2rem; margin-bottom: 1.5rem;
+  }
+  .hba1c-targets h3 {
+    font-family: var(--serif); font-size: 1.1rem;
+    font-weight: 400; color: var(--text); margin-bottom: 1rem;
+  }
+  .target-row {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+  }
+  .target-row:last-of-type { border-bottom: none; padding-bottom: 0; }
+  .target-num {
+    font-family: var(--serif); font-size: 1.5rem;
+    color: var(--blue); font-weight: 400; min-width: 52px; line-height: 1.2;
+  }
+  .target-desc { font-size: 0.875rem; color: var(--stone); line-height: 1.65; font-weight: 300; }
+  .hba1c-caveat {
+    font-size: 0.84rem; color: var(--stone); font-style: italic;
+    margin-top: 1rem; line-height: 1.65; font-weight: 300;
+    padding-top: 0.75rem; border-top: 1px dashed var(--blue-mid);
+  }
+
   /* RESOURCE CARDS */
   .resource-grid {
     display: grid;
@@ -307,7 +344,7 @@
   .resource-card p { font-size: 0.875rem; color: var(--stone); line-height: 1.65; font-weight: 300; }
   .resource-source { font-size: 0.78rem; color: var(--blue); margin-top: 0.85rem; font-weight: 500; }
 
-  /* PROGRAMME CARDS — featured */
+  /* PROGRAMME CARDS */
   .prog-card-featured {
     background: var(--bg); border: 1.5px solid var(--blue);
     border-radius: var(--radius-lg); padding: 2rem;
@@ -460,32 +497,6 @@
   }
   .footer-links a:hover { color: var(--blue-mid); }
 
-  /* REVIEW MODE */
-  .review-banner {
-    background: #b91c1c; color: white;
-    padding: 0.75rem 2rem; font-size: 13px; font-weight: 500;
-    text-align: center; letter-spacing: 0.02em;
-  }
-  .changed-block {
-    border-left: 4px solid #dc2626 !important;
-    background: #fff5f5 !important;
-    position: relative;
-  }
-  .change-label {
-    display: inline-block;
-    font-size: 10px; font-weight: 600;
-    background: #dc2626; color: white;
-    padding: 2px 8px; border-radius: 100px;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    margin-bottom: 0.6rem; display: block;
-  }
-  .change-note {
-    font-size: 11px; color: #b91c1c;
-    font-style: italic; margin-top: 0.6rem;
-    line-height: 1.5; border-top: 1px dashed #fca5a5;
-    padding-top: 0.5rem;
-  }
-
   @media (max-width: 700px) {
     nav { padding: 0 1.25rem; }
     .nav-links { display: none; }
@@ -497,6 +508,7 @@
     .journey-step { border-right: none; border-bottom: 1px solid var(--border); padding: 1.75rem 1.25rem; }
     .journey-step:last-child { border-bottom: none; }
     .hba1c-inner { padding: 1.5rem; }
+    .hba1c-targets { padding: 1.25rem; }
     .redflags { padding: 1.5rem; }
     .footer-inner { grid-template-columns: 1fr; }
     .footer-links { text-align: left; margin-top: 1.5rem; }
@@ -506,7 +518,9 @@
 </head>
 <body>
 
-<div class="review-banner">Review version &mdash; changes highlighted in red for Rachael Stow and Isi Hooley &middot; June 2026</div>
+<div class="feedback-banner">
+  <strong>Draft page &mdash; we'd love your thoughts.</strong> Does this make sense? Is anything missing or not quite right? Please let your diabetes nurse or dietitian know.
+</div>
 
 <nav>
   <a href="#" class="nav-brand">Living with diabetes</a>
@@ -534,9 +548,7 @@
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">Weymouth &amp; Portland &middot; Diabetes Team</p>
-    <span class="change-label">Updated headline</span>
     <h1>Diabetes is quiet.<br><em>Until it isn't.<br>Here's what helps.</em></h1>
-    <p class="change-note">Previous: "Living with diabetes / Know more. Do more. Live well." New headline addresses the "I feel fine" cohort directly. Working title &mdash; please let us know if this lands well for patients you see.</p>
     <div class="hero-lead">
       <p>One of the most common things people say after a diabetes diagnosis is: I feel fine. And that is often true. Diabetes does not always make you feel unwell &mdash; especially at first.</p>
       <p>But it is working quietly in the background. And what you do now, before you feel any different, is when it matters most.</p>
@@ -611,7 +623,7 @@
           <div class="play-btn"><div class="play-icon"></div></div>
         </div>
         <div class="video-body">
-          <h3>Food and blood sugar</h3>
+          <h3>Food and blood glucose</h3>
           <p>Practical information on how different foods affect blood glucose levels, and how to think about food choices without it becoming overwhelming.</p>
           <p class="video-duration">YouTube &middot; Free</p>
         </div>
@@ -644,14 +656,30 @@
 <!-- HBA1C EXPLAINER -->
 <section class="hba1c-section" id="hba1c">
   <div class="section-inner">
-    <span class="change-label">Updated &mdash; Isi feedback: blood glucose throughout</span>
     <p class="section-label">Understanding your numbers</p>
     <h2 class="section-title">What is your HbA1c?</h2>
     <div class="hba1c-inner">
       <p>&ldquo;Your HbA1c is a measure of your average blood glucose over the past two to three months. It is one of the most useful tools you have for understanding how your diabetes is doing &mdash; but many people are never quite sure what it means.&rdquo;</p>
     </div>
-    <p class="change-note">Terminology: "blood sugar" replaced with "blood glucose" throughout the page (Isi's preference, to avoid patients conflating blood glucose with table sugar). Exception: Diabetes UK use "blood sugar" so we retain it where quoting their resources.</p>
-    <p class="hba1c-honest">Unlike a blood glucose reading taken at a single moment, the HbA1c gives a longer picture. It is the number your care team uses to understand whether your diabetes is well supported, and to make decisions about your care. Knowing your own number, and what it means for you, puts you more in the picture.</p>
+    <p class="hba1c-honest">Glucose is the type of sugar in your blood. Unlike a blood glucose reading taken at a single moment, the HbA1c gives a longer picture. It is the number your care team uses to understand whether your diabetes is well supported, and to make decisions about your care. Knowing your own number, and what it means for you, puts you more in the picture.</p>
+
+    <div class="hba1c-targets">
+      <h3>What does the number mean?</h3>
+      <div class="target-row">
+        <div class="target-num">48</div>
+        <div class="target-desc">For most people with Type 2 diabetes, an HbA1c of 48 mmol/mol or lower is the general target &mdash; especially in the first eight years after diagnosis and if you are not on insulin or gliclazide.</div>
+      </div>
+      <div class="target-row">
+        <div class="target-num">53</div>
+        <div class="target-desc">If you are taking medication that can cause low blood glucose (such as gliclazide or insulin), a slightly higher target of 53 mmol/mol is often used to reduce the risk of hypos.</div>
+      </div>
+      <div class="target-row">
+        <div class="target-num">58</div>
+        <div class="target-desc">An HbA1c above 58 mmol/mol is a signal that your diabetes may benefit from more support &mdash; whether through changes to lifestyle, medication, or both. Your practice nurse will discuss this with you.</div>
+      </div>
+      <p class="hba1c-caveat">These are general guides, not fixed rules. If you have had diabetes for a long time, are older, or have other health conditions, your target will be individual to you. Your practice nurse will tell you what your target is. If you are not sure, just ask.</p>
+    </div>
+
     <div class="resource-grid">
       <a href="https://www.diabetes.org.uk/guide-to-diabetes/managing-your-diabetes/hba1c" target="_blank" rel="noopener" class="resource-card">
         <span class="resource-tag">Diabetes UK</span>
@@ -666,11 +694,9 @@
 <!-- PRE-DIABETES -->
 <section id="prediabetes" style="background: var(--bg); padding-top: 0; padding-bottom: 1rem;">
   <div class="section-inner">
-    <div class="prediabetes-box changed-block">
-      <span class="change-label">Updated &mdash; Isi feedback</span>
+    <div class="prediabetes-box">
       <h3>Has your GP told you your blood glucose is a bit high?</h3>
       <p>This section is for people who have not yet been diagnosed with diabetes. If you are already living with diabetes and your GP has said the same thing, the information about small changes and support further down this page applies to you too.</p>
-      <p class="change-note">Added clarifying line: a GP might say "your blood glucose is a bit high" to someone already diagnosed too, so we now make clear who this box is for.</p>
       <p>Pre-diabetes, or non-diabetic hyperglycaemia, means your blood glucose is above normal but not yet in the diabetic range. It is not a diagnosis of diabetes &mdash; and it does not have to become one.</p>
       <p>More than 6,000 people across Weymouth and Portland are in this position. Small changes at this stage make a real difference. Ask your GP or practice nurse whether you are eligible for a free NHS prevention programme.</p>
       <ul>
@@ -694,14 +720,12 @@
     <p class="section-intro">Living with diabetes involves a lot of small decisions every day. The goal is not perfection. It is finding an approach that works for your life and that you can sustain long term.</p>
 
     <div class="selfmgmt-grid">
-      <div class="selfmgmt-card changed-block">
-        <span class="change-label">Updated &mdash; Isi feedback</span>
+      <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Blood glucose</span>
         <h3>Know your numbers</h3>
         <p>Most people with Type 2 diabetes are not prescribed blood glucose monitoring equipment. Your HbA1c, measured at your regular review, is the main number to follow. It gives a picture of how your blood glucose has been over the past two to three months &mdash; more useful than any single reading.</p>
         <div class="selfmgmt-tips">
-          <p class="change-note">Reframed: most T2 patients are not prescribed monitoring equipment. Section now centres on HbA1c as the main number to follow, rather than assuming home testing.</p>
-        <span class="tip">Ask for your HbA1c result at every review &mdash; it is yours to know</span>
+          <span class="tip">Ask for your HbA1c result at every review &mdash; it is yours to know</span>
           <span class="tip">Ask what it means and whether the trend is heading in the right direction</span>
           <span class="tip">If you do monitor at home, patterns over time matter more than individual readings</span>
         </div>
@@ -718,12 +742,15 @@
       </div>
       <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Movement</span>
-        <h3>Movement and blood sugar</h3>
+        <h3>Movement and blood glucose</h3>
         <p>Physical activity can help to lower blood glucose. It does not have to be intense &mdash; even a short walk after eating makes a difference. The best movement is the kind you will actually do.</p>
         <div class="selfmgmt-tips">
           <span class="tip">A 10-minute walk after meals helps lower blood glucose</span>
-          <span class="tip">Aim for something you enjoy and can keep up</span>
+          <span class="tip">NHS guidelines suggest 150 minutes of moderate activity a week &mdash; but starting is what matters most</span>
           <span class="tip">LiveWell Dorset can help you find what suits you</span>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="https://www.nhs.uk/live-well/exercise/exercise-guidelines/physical-activity-guidelines-for-adults-aged-19-to-64/" target="_blank" rel="noopener" style="font-size: 0.82rem; color: var(--blue); font-weight: 500;">NHS physical activity guidelines &rarr;</a>
         </div>
       </div>
       <div class="selfmgmt-card">
@@ -778,12 +805,15 @@
           <span class="tip">No GP referral needed for Steps 2 Wellbeing</span>
         </div>
       </div>
-      <div class="selfmgmt-card changed-block">
-        <span class="change-label">Updated &mdash; Isi feedback</span>
+      <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Self care</span>
-        <h3>Sleep and taking care of yourself</h3>
-        <p class="change-note">Reframed from advice checklist to acknowledgement. Isi's point: for people with hectic lives or caring responsibilities, a list of sleep habits becomes another thing to feel bad about. Rachael &mdash; does this framing work clinically?</p>
-        <p>Poor sleep raises blood glucose, and life does not always make good sleep easy. Caring responsibilities, work, stress &mdash; these are real. The point is not to add another thing to feel bad about. It is to notice that how you are looking after yourself overall is part of how your diabetes behaves. If sleep is a persistent problem, it is worth mentioning at your next review &mdash; not as a failure, but as useful information.</p>
+        <h3>Sleep matters more than you might think</h3>
+        <p>Poor sleep raises blood glucose, makes it harder to lose weight, and affects your health and how you feel generally. Caring responsibilities, work, and stress are all real &mdash; the point is not to add another thing to feel bad about. But if sleep is a persistent problem, it is worth mentioning at your next review.</p>
+        <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--stone); line-height: 1.65; font-weight: 300;">If you are frequently woken by snoring, gasping, or feeling unrefreshed even after a full night, ask your GP about sleep apnoea &mdash; it is more common in people with diabetes and is very treatable.</p>
+        <div class="selfmgmt-tips" style="margin-top: 0.75rem;">
+          <span class="tip">Steps 2 Wellbeing includes support with sleep</span>
+          <span class="tip"><a href="https://www.sleepstation.org.uk" target="_blank" rel="noopener" style="color: var(--blue);">SleepStation</a> offers NHS-backed cognitive therapy for insomnia &mdash; ask your GP for a referral</span>
+        </div>
       </div>
       <div class="selfmgmt-card">
         <span class="selfmgmt-tag">Remission</span>
@@ -811,7 +841,6 @@
   <div class="section-inner">
     <p class="section-label">In Weymouth &amp; Portland</p>
     <h2 class="section-title">You are not on your own</h2>
-    <p class="change-note" style="margin-bottom:0.75rem;">"All five practices" replaced with "GP surgeries" &mdash; Isi flagged the former as jargon patients wouldn't use.</p>
     <p class="section-intro">Your practice nurse or GP is your first stop for diabetes queries. You also have access to local specialist support across all the GP surgeries in Weymouth and Portland.</p>
 
     <div class="local-grid">
@@ -843,15 +872,13 @@
     </div>
 
     <div class="redflags">
-      <span class="change-label">Updated &mdash; Isi feedback</span>
-      <p class="change-note" style="margin-bottom:0.75rem;">Three changes: hypo entry removed from main list and given its own box below with caveat that most T2 patients are not at risk (only those on gliclazide or insulin). TREND PDF linked. "Your HbA1c rising repeatedly" added as a reason to contact GP &mdash; threshold wording to be confirmed with Rachael.</p>
-      <p class="redflag-title"><span class="redflag-dot"></span>When to contact your GP or seek urgent help</p>
+      <p class="redflag-title"><span class="redflag-dot"></span>When to contact your GP or practice nurse</p>
       <ul class="redflag-list">
         <li>Blood glucose that will not come down despite your usual approach</li>
         <li>New or worsening foot problems &mdash; do not wait</li>
         <li>Changes in your vision</li>
         <li>Unexplained weight loss or fatigue</li>
-        <li>Your HbA1c rising repeatedly over several reviews</li>
+        <li>Your HbA1c results are continually rising, especially above your individual target &mdash; if the surgery has not already been in touch. If you do not know your target, ask your nurse</li>
         <li>Diabetes that is stopping you coping day to day</li>
         <li>If you are struggling emotionally, call NHS 111</li>
       </ul>
